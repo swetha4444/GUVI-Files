@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign In</title>
+    <link rel="icon" href="images/fav.png" type="image/gif" sizes="32x32">
+
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body style="background: rgb(220,177,196);background: radial-gradient(circle, rgba(220,177,196,1) 0%, rgba(234,225,229,1) 100%);">
+
+        <div id="alert_msg" class="alert alert-warning alert-dismissible" role="alert">
+            <strong>Try Again! </strong><span></span>
+        </div>
+
+        <div class="container">
+            <div class="signin-content">
+                <div class="signin-image">
+                    <figure><img src="images/signin-image.jpg" alt="sing up image"></figure>
+                    <a href="register.html" class="signup-image-link">Create an account</a>
+                </div>
+
+                <div class="signin-form">
+                    <h2 class="form-title">Login</h2>
+                    <form  class="register-form" name="signInForm" id="signInForm">
+                        <div class="form-group">
+                            <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                            <input type="text" name="email" id="email" placeholder="Your Email"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                            <input type="password" name="pass" id="pass" placeholder="Password"/>
+                            <label for="pass"><i class="far fa-eye" id="togglePassword" style="margin-left: 245px;"></i></label>
+                                <script>
+                                    const togglePassword = document.querySelector('#togglePassword');
+                                    const password = document.querySelector('#pass');
+                                    togglePassword.addEventListener('click', function (e) {
+                                    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                                    password.setAttribute('type', type);
+                                    this.classList.toggle('fa-eye-slash');
+                                    });
+                                </script>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                            <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="hidden" name="error" id="error">
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" name="dberror" id="dberror">
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" name="signInCheck" id="signInCheck">
+                        </div>
+                        
+                        <div class="form-group form-button">
+                                <input type="submit" name="signInSubmit" id="signInSubmit" style="margin:auto; width: 110px; background-color: salmon; border: 0px; color: azure; font-weight: 700;" value="Log In" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/style.js"></script>
+</body>
+</html>

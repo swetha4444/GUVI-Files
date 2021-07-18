@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <link rel="icon" href="images/fav.png" type="image/gif" sizes="32x32">
+
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body style="margin-top: 20px; background: rgb(220,177,196);
+background: radial-gradient(circle, rgba(220,177,196,1) 0%, rgba(234,225,229,1) 100%);">
+        <div id="alert_msg" class="alert alert-warning alert-dismissible" role="alert">
+            <strong>Try Again! </strong><span></span>
+        </div>
+    
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Sign up</h2>
+                        <form method="post" class="register-form" name="signUpForm" id="signUpForm" >
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="name" placeholder="Your Name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="dob"><i class="zmdi zmdi-account-calendar"></i></label>
+                                <input type="text" name="dob" id="dob" placeholder="DD-MM-YYYY"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="cont"><i class="zmdi zmdi-accounts-alt"></i></label>
+                                <input type="text" name="cont" id="cont" placeholder="Mobile No."/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                                <label for="pass"><i class="far fa-eye" id="togglePassword" style="margin-left: 245px;"></i></label>
+                                <script>
+                                    const togglePassword = document.querySelector('#togglePassword');
+                                    const password = document.querySelector('#pass');
+                                    togglePassword.addEventListener('click', function (e) {
+                                    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                                    password.setAttribute('type', type);
+                                    this.classList.toggle('fa-eye-slash');
+                                    });
+                                </script>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
+                                <label for="re_pass"><i class="far fa-eye" id="toggleRePassword" style="margin-left: 245px;"></i></label>
+                                <script>
+                                    const toggleRePassword = document.querySelector('#toggleRePassword');
+                                    const Repassword = document.querySelector('#re_pass');
+                                    toggleRePassword.addEventListener('click', function (t) {
+                                    const Retype = Repassword.getAttribute('type') === 'password' ? 'text' : 'password';
+                                    Repassword.setAttribute('type', Retype);
+                                    this.classList.toggle('fa-eye-slash');
+                                    });
+                                </script>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-nature"></i></label>
+                                <input type="text" name="prof" id="prof" placeholder="Profession"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-pin"></i></label>
+                                <input type="text" name="nat" id="nat" placeholder="Nationality"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                                <a href="mailto: swethasaseendran4@gmail.com" class="signup-image-link" style="margin-left:0px;">Contact Admin</a>
+                            </div>
+                            
+                            <div class="form-group">
+                            <input type="hidden" name="error" id="error">
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" name="dberror" id="dberror">
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" name="signUpCheck" id="signUpCheck">
+                            </div>
+                                
+                            <div class="form-group form-button">
+                                <input name="signUpSubmit" id="signUpSubmit" type="submit" class="btn btn-info" style="margin:auto; width: 110px; background-color: salmon; border: 0px; color: azure; font-weight: 700;" value="Register"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                    <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
+                    <a href="index.html" class="signup-image-link">I am a member.</a>
+                    </div>
+                </div>
+            </div>
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/register.js"></script>
+    
+</body>
+</html>

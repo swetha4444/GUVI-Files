@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Update Profile</title>
+    <link rel="icon" href="images/fav.png" type="image/gif" sizes="32x32">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/update_style.css">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+
+<body style="background: rgb(220,177,196);
+background: radial-gradient(circle, rgba(220,177,196,1) 0%, rgba(234,225,229,1) 100%);">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <div class="container">
+        <div class="view-account" style="height: 800px;">
+            <section class="module">
+                <div class="module-inner">
+                    <div class="content-panel" style="margin-left: 0px; padding-left: 60px;  padding-right: 60px;;">
+                        <h0 class="title">Update Profile</h0>
+                        <form name="updateForm" id="updateForm" class="form-horizontal" method="post">
+                            <fieldset class="fieldset">
+                                <h3 class="fieldset-title" style="font-weight: bolder; font-size: 20px;">Personal Info
+                                </h3>
+                                <div class="form-group">
+                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label"
+                                        style="color: LightCoral;font-size: 15px;font-weight: 700;">Full Name</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                                        <input name="p_name" id="p_name" type="text" class="text-bar form-control" style="width:50%;" name="name" id="name"
+                                            placeholder="Name">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label"
+                                        style="color: LightCoral;font-size: 15px;font-weight: 700;">DOB</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12" >
+                                        <input name="p_dob" id="p_dob" type="text" class="text-bar form-control" style="width:50%;" name="dob" id="dob"
+                                            placeholder="DD-MM-YYYY">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label"
+                                        style="color: LightCoral;font-size: 15px;font-weight: 700;">Profession</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                                        <input name="p_prof" id="p_prof" type="text" class="form-control" style="width:50%;" name="prof" id="prof"
+                                            placeholder="Profession">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label"
+                                        style="color: LightCoral;font-size: 15px;font-weight: 700;">Nationality</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                                        <input name="p_nat" id="p_nat" type="text" class="form-control" style="width:50%;"name="nat" id="nat"
+                                            placeholder="Nationality">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <fieldset class="fieldset">
+                                <h3 class="fieldset-title" style="font-weight: bolder; font-size: 30px;">Contact Info
+                                </h3>
+                                <div class="form-group">
+                                    <label class="col-md-2  col-sm-3 col-xs-12 control-label"
+                                        style="color: LightCoral;font-size: 15px;font-weight: 700;">Email</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                                        <input name="p_email" id="p_email" type="email" class="form-control" style="width:50%;" name="email" id="email"
+                                            placeholder="eg. name@website.com">
+                                        <p class="help-block"><em>Remember your new E-mail!</em>
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label"
+                                        style="color: LightCoral;font-size: 15px;font-weight: 700;">Password</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                
+                                        <input name="p_pass" id="p_pass" type="password" class="form-control"style="width:30%;float:left;" name="pass" id="pass"
+                                            placeholder="Nationality">
+                                        <label for="pass" style="margin-left:20px;";><i class="far fa-eye" id="togglePassword" ></i></label>
+                                        <script>
+                                            const togglePassword = document.querySelector('#togglePassword');
+                                            const password = document.querySelector('#p_pass');
+                                            togglePassword.addEventListener('click', function (e) {
+                                            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+                                            password.setAttribute('type', type);
+                                            this.classList.toggle('fa-eye-slash');
+                                            });
+                                        </script>
+                    
+                                            <p class="help-block" style="width:200px;margin-right:10px;"><em>Remember your new Password!</em>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-md-2 col-sm-3 col-xs-12 control-label"
+                                        style="color: LightCoral;font-size: 15px;font-weight: 700;">Contact</label>
+                                    <div class="col-md-10 col-sm-9 col-xs-12">
+                                        <input name="p_cont" id="p_cont" type="text" class="form-control" style="width:50%;" name="cont" id="cont"
+                                            placeholder="Mobile No.">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                            <hr>
+                            <div class="form-group">
+                                <input type="hidden" name="updateSave" class="form-control" id="updateSave">
+                            </div>
+                            
+                            <div class="form-group">
+                                <input name="updateSaveButton" id="updateSaveButton" type="submit" class="btn btn-info" name="to-profile"
+                                    style="margin: auto; width: 80px; background-color:salmon;color:#ffffff; border: 0px; font-weight: 700;"
+                                    value="Update">
+                                <a href="profile.html" class="btn btn-info" role="button" style="margin: auto;width: 80px; background-color:salmon;color:#ffffff; border: 0px; font-weight: 700;">Back</a>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- JQUERY FILES -->
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+    <script type="text/javascript" src="js/update.js"></script>
+
+    </script>
+</body>
+
+</html>
